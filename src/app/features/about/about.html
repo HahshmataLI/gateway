@@ -1,0 +1,359 @@
+<!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-900 to-purple-900 text-white overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+  <div
+    class="absolute inset-0"
+    [style.backgroundImage]="bgPattern">
+  </div>
+</div>
+
+      
+      <div class="container mx-auto px-4 py-12 md:py-20 lg:py-32 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-blue-300 font-semibold uppercase tracking-wide mb-3 md:mb-4 text-sm md:text-base">About Gateway</p>
+          <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">
+            Empowering Careers, 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 block md:inline">
+              Transforming Businesses
+            </span>
+          </h1>
+          <p class="text-base md:text-xl text-blue-200 mb-8 md:mb-12 max-w-3xl mx-auto px-4">
+            For over a decade, Gateway has been at the forefront of professional education and call center solutions, 
+            bridging the gap between industry demands and practical skills.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
+            <app-cta-button 
+              label="Explore Our Courses" 
+              icon="pi pi-book" 
+              [fullWidth]="true"
+              class="w-full sm:w-auto"
+              routerLink="/courses">
+            </app-cta-button>
+            <app-cta-button 
+              label="Call Center Services" 
+              variant="outline" 
+              icon="pi pi-phone" 
+              [fullWidth]="true"
+              class="w-full sm:w-auto"
+              routerLink="/call-center-services">
+            </app-cta-button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div>
+            <app-section-header
+              title="Our Story"
+              subtitle="From Humble Beginnings"
+              description="">
+            </app-section-header>
+            
+            <div class="space-y-4 md:space-y-6">
+              <p class="text-gray-600 text-base md:text-lg">
+                Founded in 2010, Gateway started as a small training center with a simple mission: 
+                to provide practical, industry-relevant education that actually leads to jobs.
+              </p>
+              
+              <p class="text-gray-600">
+                What began as a two-room training facility has grown into a comprehensive institute 
+                offering cutting-edge courses in digital marketing, web development, e-commerce, 
+                and professional freelancing. In 2019, we expanded our services to include 
+                professional call center solutions, leveraging our expertise in training to deliver 
+                exceptional customer support services.
+              </p>
+              
+              <p class="text-gray-600">
+                Today, Gateway serves thousands of students and dozens of businesses worldwide, 
+                maintaining our commitment to excellence, innovation, and real-world impact.
+              </p>
+            </div>
+            
+            <div class="mt-6 md:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
+              <div class="text-center p-3 md:p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-2xl md:text-3xl font-bold text-blue-600">14+</p>
+                <p class="text-gray-600 text-sm md:text-base">Years of Excellence</p>
+              </div>
+              <div class="text-center p-3 md:p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-2xl md:text-3xl font-bold text-blue-600">5000+</p>
+                <p class="text-gray-600 text-sm md:text-base">Students Trained</p>
+              </div>
+              <div class="text-center p-3 md:p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-2xl md:text-3xl font-bold text-blue-600">95%</p>
+                <p class="text-gray-600 text-sm md:text-base">Placement Rate</p>
+              </div>
+              <div class="text-center p-3 md:p-4 bg-white rounded-lg shadow-sm">
+                <p class="text-2xl md:text-3xl font-bold text-blue-600">50+</p>
+                <p class="text-gray-600 text-sm md:text-base">Industry Partners</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 lg:mt-0">
+            <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-6 md:p-8 text-white relative overflow-hidden">
+              <div class="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-16 h-16 md:w-20 md:h-20 bg-yellow-500 rounded-full flex items-center justify-center">
+                <i class="pi pi-award text-2xl md:text-3xl"></i>
+              </div>
+              
+              <div class="mt-8 md:mt-12 lg:mt-8">
+                <h3 class="text-xl md:text-2xl font-bold mb-6">Our Mission & Vision</h3>
+                
+                <div class="space-y-6">
+                  <div>
+                    <h4 class="text-lg md:text-xl font-bold mb-2 text-yellow-300">Mission</h4>
+                    <p class="text-blue-100 text-sm md:text-base">
+                      To empower individuals with industry-relevant skills and provide businesses 
+                      with exceptional call center solutions, creating sustainable career growth 
+                      and operational excellence.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 class="text-lg md:text-xl font-bold mb-2 text-yellow-300">Vision</h4>
+                    <p class="text-blue-100 text-sm md:text-base">
+                      To be the leading global institute for professional education and call center 
+                      services, recognized for our commitment to quality, innovation, and impact.
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-blue-400">
+                  <p class="italic text-blue-200 text-sm md:text-base">
+                    "Education is not just about acquiring knowledge; it's about applying it to create real impact."
+                  </p>
+                  <p class="mt-3 md:mt-4 font-semibold text-sm md:text-base">— Gateway Leadership Team</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline / Milestones -->
+    <section class="py-12 md:py-16 lg:py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <app-section-header
+          title="Our Journey"
+          subtitle="Milestones & Achievements"
+          description="Key moments in Gateway's journey from startup to industry leader">
+        </app-section-header>
+        
+        <div class="max-w-6xl mx-auto">
+          <!-- Mobile Timeline (Vertical Cards) -->
+          <div class="lg:hidden space-y-6">
+            <div *ngFor="let milestone of milestones" class="bg-white rounded-xl shadow-md p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                  <i [class]="milestone.icon" class="text-white text-xl"></i>
+                </div>
+                <div>
+                  <div class="text-xl font-bold text-gray-800">{{ milestone.year }}</div>
+                  <div class="text-gray-600 text-sm">{{ milestone.title }}</div>
+                </div>
+              </div>
+              <p class="text-gray-600">{{ milestone.description }}</p>
+            </div>
+          </div>
+          
+          <!-- Desktop Timeline -->
+          <div class="hidden lg:block">
+            <p-timeline [value]="milestones" align="alternate">
+              <ng-template pTemplate="content" let-milestone>
+                <div class="p-4">
+                  <div class="font-bold text-gray-800 text-lg mb-2">{{ milestone.year }}: {{ milestone.title }}</div>
+                  <p class="text-gray-600">{{ milestone.description }}</p>
+                </div>
+              </ng-template>
+              
+              <ng-template pTemplate="opposite" let-milestone>
+                <div class="text-center p-4">
+                  <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+                    <i [class]="milestone.icon" class="text-white text-2xl"></i>
+                  </div>
+                  <div class="text-2xl font-bold text-gray-800">{{ milestone.year }}</div>
+                </div>
+              </ng-template>
+            </p-timeline>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4">
+        <app-section-header
+          title="Our Core Values"
+          subtitle="What Drives Us"
+          description="The principles that guide every decision and action at Gateway">
+        </app-section-header>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div *ngFor="let value of companyValues" 
+               class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-white flex-shrink-0" [ngClass]="value.color">
+                <i [class]="value.icon" class="text-xl md:text-2xl"></i>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-gray-800">{{ value.title }}</h3>
+            </div>
+            <p class="text-gray-600 text-sm md:text-base">{{ value.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div class="container mx-auto px-4">
+        <app-section-header
+          title="Meet Our Leadership"
+          subtitle="Expert Guidance"
+          description="Our experienced team brings decades of industry and educational expertise">
+        </app-section-header>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <app-team-card *ngFor="let member of teamMembers" [teamMember]="member"></app-team-card>
+        </div>
+        
+        <div class="mt-12 md:mt-16 text-center">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Join Our Growing Team</h3>
+          <p class="text-gray-600 max-w-2xl mx-auto mb-6 md:mb-8 px-4">
+            We're always looking for passionate educators, industry experts, and support staff 
+            to help us grow and innovate.
+          </p>
+          <app-cta-button 
+            label="View Career Opportunities" 
+            icon="pi pi-briefcase"
+            variant="outline">
+          </app-cta-button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accreditation & Partnerships -->
+    <section class="py-12 md:py-16 lg:py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <app-section-header
+          title="Accreditation & Partnerships"
+          subtitle="Recognized Excellence"
+          description="We maintain the highest standards through accreditation and strategic partnerships">
+        </app-section-header>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
+          <div class="text-center p-4 md:p-6">
+            <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 bg-blue-100 rounded-full flex items-center justify-center">
+              <i class="pi pi-verified text-blue-600 text-2xl md:text-3xl"></i>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">ISO Certified</h3>
+            <p class="text-gray-600 text-sm md:text-base">Quality Management System Certified (ISO 9001:2015)</p>
+          </div>
+          
+          <div class="text-center p-4 md:p-6">
+            <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 bg-green-100 rounded-full flex items-center justify-center">
+              <i class="pi pi-shield text-green-600 text-2xl md:text-3xl"></i>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Industry Recognized</h3>
+            <p class="text-gray-600 text-sm md:text-base">Recognized by major tech associations and industry bodies</p>
+          </div>
+          
+          <div class="text-center p-4 md:p-6">
+            <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 bg-purple-100 rounded-full flex items-center justify-center">
+              <i class="pi pi-handshake text-purple-600 text-2xl md:text-3xl"></i>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Corporate Partnerships</h3>
+            <p class="text-gray-600 text-sm md:text-base">Partnered with 50+ companies for placements and projects</p>
+          </div>
+          
+          <div class="text-center p-4 md:p-6">
+            <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 bg-orange-100 rounded-full flex items-center justify-center">
+              <i class="pi pi-globe text-orange-600 text-2xl md:text-3xl"></i>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Global Network</h3>
+            <p class="text-gray-600 text-sm md:text-base">Part of an international network of training institutes</p>
+          </div>
+        </div>
+        
+        <!-- Partner Logos (Placeholder) -->
+        <div class="mt-8 md:mt-12">
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8">
+            <div *ngFor="let i of [1,2,3,4,5,6]" 
+                 class="h-16 md:h-20 bg-gray-100 rounded-xl flex items-center justify-center">
+              <div class="text-gray-400 text-center">
+                <div class="text-xs md:text-sm font-semibold">Partner {{ i }}</div>
+                <div class="text-xs">Logo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-12 md:py-16 lg:py-20 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Ready to Start Your Journey?</h2>
+          <p class="text-base md:text-xl text-blue-200 mb-8 md:mb-10 max-w-2xl mx-auto px-4">
+            Whether you're looking to advance your career or grow your business, Gateway has the solutions.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto mb-8 md:mb-12">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8">
+              <div class="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 bg-blue-500 rounded-full flex items-center justify-center">
+                <i class="pi pi-graduation-cap text-xl md:text-2xl"></i>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">For Students</h3>
+              <p class="text-blue-200 text-sm md:text-base mb-4 md:mb-6">Launch or advance your career with industry-relevant skills</p>
+              <app-cta-button 
+                label="Browse Courses" 
+                variant="secondary" 
+                icon="pi pi-arrow-right"
+                [fullWidth]="true"
+                routerLink="/courses">
+              </app-cta-button>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8">
+              <div class="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 bg-purple-500 rounded-full flex items-center justify-center">
+                <i class="pi pi-building text-xl md:text-2xl"></i>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">For Businesses</h3>
+              <p class="text-blue-200 text-sm md:text-base mb-4 md:mb-6">Enhance your customer support with our call center services</p>
+              <app-cta-button 
+                label="Explore Services" 
+                variant="secondary" 
+                icon="pi pi-arrow-right"
+                [fullWidth]="true"
+                routerLink="/call-center-services">
+              </app-cta-button>
+            </div>
+          </div>
+          
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 max-w-2xl mx-auto">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Have Questions?</h3>
+            <p class="text-blue-200 text-sm md:text-base mb-4 md:mb-6">Our team is here to help you make the right choice</p>
+            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <app-cta-button 
+                label="Contact Admissions" 
+                icon="pi pi-envelope"
+                variant="outline"
+                [fullWidth]="true"
+                class="w-full sm:w-auto"
+                routerLink="/admissions">
+              </app-cta-button>
+              <a href="tel:+1234567890" class="flex items-center justify-center gap-2 text-blue-300 hover:text-white mt-3 sm:mt-0">
+                <i class="pi pi-phone"></i>
+                <span class="font-semibold">+1 (234) 567-890</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

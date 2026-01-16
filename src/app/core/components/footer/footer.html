@@ -1,0 +1,105 @@
+<footer class="bg-gray-900 text-white pt-12 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Company Info -->
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                <span class="text-white font-bold text-xl">G</span>
+              </div>
+              <h2 class="text-2xl font-bold">Gateway</h2>
+            </div>
+            <p class="text-gray-400 mb-4">
+              Leading call center solutions and professional training institute offering cutting-edge courses for career growth.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="pi pi-facebook"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="pi pi-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="pi pi-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="pi pi-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-blue-400">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a routerLink="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+              <li><a routerLink="/about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a routerLink="/courses" class="text-gray-400 hover:text-white transition-colors">All Courses</a></li>
+              <li><a routerLink="/admissions" class="text-gray-400 hover:text-white transition-colors">Admissions</a></li>
+              <li><a routerLink="/call-center-services" class="text-gray-400 hover:text-white transition-colors">Call Center Services</a></li>
+            </ul>
+          </div>
+
+          <!-- Courses -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-blue-400">Our Courses</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Digital Marketing</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shopify Development</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">SEO Optimization</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Freelancing</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-blue-400">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center space-x-3">
+                <i class="pi pi-map-marker text-blue-400"></i>
+                <span class="text-gray-400">123 Business Street, City, Country</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="pi pi-phone text-blue-400"></i>
+                <span class="text-gray-400">+1 (234) 567-890</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="pi pi-envelope text-blue-400"></i>
+                <span class="text-gray-400">info@gateway.edu</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="pi pi-clock text-blue-400"></i>
+                <span class="text-gray-400">Mon - Fri: 9:00 AM - 6:00 PM</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="mt-12 pt-8 border-t border-gray-800">
+          <div class="max-w-2xl mx-auto text-center">
+            <h3 class="text-xl font-semibold mb-2">Subscribe to Our Newsletter</h3>
+            <p class="text-gray-400 mb-6">Get updates on new courses and industry insights</p>
+            <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+              <input pInputText 
+                     placeholder="Enter your email" 
+                     class="w-full bg-gray-800 border-gray-700 text-white" />
+              <button pButton 
+                      label="Subscribe" 
+                      class="p-button-primary bg-gradient-to-r from-blue-600 to-purple-600 border-none">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+          <p>&copy; {{ currentYear }} Gateway Call Center & Training Institute. All rights reserved.</p>
+          <p class="mt-2 text-sm">Designed with Angular & PrimeNG</p>
+        </div>
+
+      </div>
+    </footer>

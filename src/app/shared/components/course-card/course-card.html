@@ -1,0 +1,57 @@
+ <p-card [header]="course.title" class="h-full">
+      <ng-template pTemplate="header">
+        <div class="relative">
+          <div class="h-48 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-lg flex items-center justify-center">
+            <span class="text-white text-4xl font-bold">{{ getCourseInitials() }}</span>
+          </div>
+          <p-badge *ngIf="course.isFeatured" 
+                   value="Featured" 
+                   severity="success" 
+                   class="absolute top-4 right-4">
+          </p-badge>
+        </div>
+      </ng-template>
+      
+      <p class="text-gray-600 mb-4 line-clamp-3">{{ course.description }}</p>
+      
+      <div class="mb-6">
+        <div class="flex justify-between mb-2">
+          <span class="text-gray-500 text-sm">Duration</span>
+          <span class="font-semibold">{{ course.duration }}</span>
+        </div>
+        <div class="flex justify-between mb-2">
+          <span class="text-gray-500 text-sm">Level</span>
+          <span class="font-semibold">{{ course.level }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500 text-sm">Price</span>
+          <span class="text-xl font-bold text-blue-600">${{ course.price }}</span>
+        </div>
+      </div>
+      <!-- Add this after the duration/level/price section -->
+<div *ngIf="course.tags && course.tags.length > 0" class="mt-4 mb-4">
+  <div class="flex flex-wrap gap-2">
+    <span *ngFor="let tag of course.tags.slice(0, 3)" 
+          class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">
+      {{ tag }}
+    </span>
+  </div>
+</div>
+      <ng-template pTemplate="footer">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span *ngFor="let feature of course.features.slice(0, 3)" 
+                class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+            {{ feature }}
+          </span>
+          <span *ngIf="course.features.length > 3" 
+                class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">
+            +{{ course.features.length - 3 }} more
+          </span>
+        </div>
+        <button pButton 
+                label="Enroll Now" 
+                icon="pi pi-check" 
+                class="w-full p-button-primary bg-gradient-to-r from-blue-600 to-purple-600 border-none">
+        </button>
+      </ng-template>
+    </p-card>

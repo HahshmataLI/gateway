@@ -1,0 +1,56 @@
+<header class="sticky top-0 z-50 bg-white shadow-md">
+      <div class="container mx-auto px-4">
+        <nav class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-xl">G</span>
+            </div>
+            <a routerLink="/" class="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
+              Gateway
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a *ngFor="let item of navItems" 
+               [routerLink]="item.route" 
+               routerLinkActive="text-blue-600 font-semibold"
+               class="text-gray-700 hover:text-blue-600 transition-colors duration-200">
+              {{ item.label }}
+            </a>
+            <a href="tel:+1234567890" class="flex items-center space-x-2 text-blue-600 hover:text-blue-700">
+              <i class="pi pi-phone"></i>
+              <span class="font-semibold">Call Now: +92 (302) 251-0200</span>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button pButton 
+                  icon="pi pi-bars" 
+                  class="lg:hidden p-button-text p-button-rounded"
+                  (click)="toggleMobileMenu()">
+          </button>
+
+          <!-- Mobile Navigation -->
+          <div *ngIf="isMobileMenuOpen" 
+               class="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t">
+            <div class="flex flex-col py-4 px-6 space-y-4">
+              <a *ngFor="let item of navItems" 
+                 [routerLink]="item.route" 
+                 routerLinkActive="text-blue-600 font-semibold"
+                 class="text-gray-700 hover:text-blue-600 py-2 transition-colors duration-200"
+                 (click)="toggleMobileMenu()">
+                {{ item.label }}
+              </a>
+              <div class="pt-4 border-t">
+                <a href="tel:+1234567890" class="flex items-center space-x-2 text-blue-600 hover:text-blue-700">
+                  <i class="pi pi-phone"></i>
+                  <span class="font-semibold">Call Now: +92 (302) 251-0200</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
