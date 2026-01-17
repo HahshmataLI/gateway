@@ -25,12 +25,25 @@
             </a>
           </div>
 
-          <!-- Mobile Menu Button -->
-          <button pButton 
-                  icon="pi pi-bars" 
-                  class="lg:hidden p-button-text p-button-rounded"
-                  (click)="toggleMobileMenu()">
-          </button>
+       <!-- Mobile Menu Button -->
+<!-- Mobile Menu Button -->
+<div class="lg:hidden">
+  <button
+    (click)="toggleMobileMenu()"
+    class="inline-flex items-center justify-center
+           w-10 h-10 rounded-lg
+           border border-gray-200
+           text-gray-700
+           hover:bg-gray-100
+           hover:text-blue-600
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+    <i class="pi" [ngClass]="isMobileMenuOpen ? 'pi-times' : 'pi-bars'"></i>
+  </button>
+</div>
+
+
 
           <!-- Mobile Navigation -->
           <div *ngIf="isMobileMenuOpen" 

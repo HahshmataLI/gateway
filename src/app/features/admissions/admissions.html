@@ -1,8 +1,178 @@
- <div class="min-h-screen bg-gray-50">
-      <div class="container mx-auto px-4 py-8">
-        <div class="text-center py-12">
-          <h1 class="text-4xl font-bold text-gray-800 mb-4">Admissions & Contact</h1>
-          <p class="text-gray-600">Admissions page content will be added in Step 5</p>
+ <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-900 to-purple-900 text-white overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" [style.backgroundImage]="bgPattern"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 py-12 md:py-20 lg:py-32 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-blue-300 font-semibold uppercase tracking-wide mb-3 md:mb-4 text-sm md:text-base">Admissions & Contact</p>
+          <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">
+            Start Your 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 block md:inline">
+              Journey Today
+            </span>
+          </h1>
+          <p class="text-base md:text-xl text-blue-200 mb-8 md:mb-12 max-w-3xl mx-auto px-4">
+            Get in touch with us for admissions, course inquiries, or professional call center solutions. 
+            Our team is ready to assist you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+        
+        <!-- Contact Information -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-8 space-y-8">
+            <!-- Contact Card -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+              <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Contact Information</h2>
+              
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="pi pi-map-marker text-blue-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-800 mb-1">Visit Our Campus</h3>
+                    <p class="text-gray-600">123 Business Street, City, Country 12345</p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-semibold mt-2 inline-block">
+                      Get Directions →
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="pi pi-phone text-purple-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-800 mb-1">Call Us</h3>
+                    <p class="text-gray-600">+1 (234) 567-890</p>
+                    <p class="text-gray-500 text-sm">Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    <a href="tel:+1234567890" class="text-blue-600 hover:text-blue-800 text-sm font-semibold mt-2 inline-block">
+                      Call Now →
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="pi pi-envelope text-green-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-800 mb-1">Email Us</h3>
+                    <p class="text-gray-600">info@gateway.edu</p>
+                    <p class="text-gray-500 text-sm">Response within 24 hours</p>
+                    <a href="mailto:info@gateway.edu" class="text-blue-600 hover:text-blue-800 text-sm font-semibold mt-2 inline-block">
+                      Send Email →
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-8 pt-8 border-t border-gray-200">
+                <h3 class="font-semibold text-gray-800 mb-4">Business Hours</h3>
+                <div class="space-y-2">
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Monday - Friday</span>
+                    <span class="font-semibold">9:00 AM - 6:00 PM</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Saturday</span>
+                    <span class="font-semibold">10:00 AM - 4:00 PM</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Sunday</span>
+                    <span class="font-semibold">Closed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 md:p-8 text-white">
+              <h2 class="text-xl md:text-2xl font-bold mb-6">Quick Links</h2>
+              <ul class="space-y-4">
+                <li>
+                  <a routerLink="/courses" class="flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
+                    <i class="pi pi-book"></i>
+                    <span>Browse All Courses</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/call-center-services" class="flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
+                    <i class="pi pi-headphones"></i>
+                    <span>Call Center Services</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
+                    <i class="pi pi-file-pdf"></i>
+                    <span>Download Brochure</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
+                    <i class="pi pi-calendar"></i>
+                    <span>Schedule Campus Tour</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forms Section -->
+        <div class="lg:col-span-2">
+        <p-tabs>
+  <p-tablist>
+    <p-tab value="contact">Contact Us</p-tab>
+    <p-tab value="admission">Admission Form</p-tab>
+    <p-tab value="faq">FAQ</p-tab>
+  </p-tablist>
+
+  <p-tabpanels>
+    <p-tabpanel value="contact">
+      <!-- PASTE YOUR ENTIRE "Contact Us" FORM HTML HERE -->
+      <div class="p-4 md:p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Send Us a Message</h2>
+        <p class="text-gray-600 mb-6">Have questions? We're here to help...</p>
+        <form [formGroup]="contactForm" (ngSubmit)="onContactSubmit()" class="space-y-6">
+          <!-- ... rest of your contact form ... -->
+        </form>
+      </div>
+    </p-tabpanel>
+
+    <p-tabpanel value="admission">
+      <!-- PASTE YOUR ENTIRE "Admission Form" HTML HERE -->
+      <div class="p-4 md:p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Apply for Admission</h2>
+        <p class="text-gray-600 mb-6">Fill out this form to start your application process...</p>
+        <form [formGroup]="admissionForm" (ngSubmit)="onAdmissionSubmit()" class="space-y-6">
+          <!-- ... rest of your admission form ... -->
+        </form>
+      </div>
+    </p-tabpanel>
+
+    <p-tabpanel value="faq">
+      <!-- PASTE YOUR ENTIRE FAQ CONTENT HERE -->
+      <div class="p-4 md:p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6">
+          <!-- ... your FAQ questions and answers ... -->
+        </div>
+      </div>
+    </p-tabpanel>
+  </p-tabpanels>
+</p-tabs>
         </div>
       </div>
     </div>
+
+    <!-- Toast Container -->
+    <p-toast></p-toast>

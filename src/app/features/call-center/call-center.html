@@ -1,8 +1,144 @@
- <div class="min-h-screen bg-gray-50">
-      <div class="container mx-auto px-4 py-8">
-        <div class="text-center py-12">
-          <h1 class="text-4xl font-bold text-gray-800 mb-4">Call Center Services</h1>
-          <p class="text-gray-600">Call Center Services page content will be added in Step 2</p>
+<!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-900 to-purple-900 text-white overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0"  [style.backgroundImage]="bgPattern"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 py-12 md:py-20 lg:py-32 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-blue-300 font-semibold uppercase tracking-wide mb-3 md:mb-4 text-sm md:text-base">Professional Solutions</p>
+          <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">
+            Call Center 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 block md:inline">
+              Services
+            </span>
+          </h1>
+          <p class="text-base md:text-xl text-blue-200 mb-8 md:mb-12 max-w-3xl mx-auto px-4">
+            Expert call center solutions to enhance customer experience, drive sales, and streamline operations 
+            for businesses of all sizes.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
+            <app-cta-button 
+              label="Get Free Consultation" 
+              icon="pi pi-calendar" 
+              [fullWidth]="true"
+              class="w-full sm:w-auto"
+              routerLink="/admissions">
+            </app-cta-button>
+            <app-cta-button 
+              label="Call Now: +1 (234) 567-890" 
+              variant="outline" 
+              icon="pi pi-phone" 
+              [fullWidth]="true"
+              class="w-full sm:w-auto">
+            </app-cta-button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4">
+        <app-section-header
+          title="Our Call Center Services"
+          subtitle="Comprehensive Solutions"
+          description="We provide end-to-end call center services with a focus on quality, efficiency, and customer satisfaction.">
+        </app-section-header>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 border-l-4 border-blue-500">
+            <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <i class="pi pi-headphones text-2xl text-blue-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Inbound Support</h3>
+            <p class="text-gray-600 mb-6">24/7 customer service, technical support, order processing, and help desk solutions.</p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center gap-2">
+                <i class="pi pi-check-circle text-green-500"></i>
+                <span>24/7 Availability</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="pi pi-check-circle text-green-500"></i>
+                <span>Multilingual Support</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="pi pi-check-circle text-green-500"></i>
+                <span>Technical Assistance</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 border-l-4 border-purple-500">
+            <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+              <i class="pi pi-phone text-2xl text-purple-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Outbound Sales</h3>
+            <p class="text-gray-600 mb-6">Telemarketing, lead generation, appointment setting, and customer follow-up services.</p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center gap-2">
+                <i class="pi pi-check-circle text-green-500"></i>
+                <span>Lead Generation</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="pi pi-check-circle text-green-500"></i>
+                <span>Market Research</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="pi pi-check-circle text-green-500"></i>
+                <span>Appointment Setting</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 md:p-8 border-l-4 border-green-500">
+            <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+              <i class="pi pi-comments text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Omnichannel Support</h3>
+            <p class="text-gray-600 mb-6">Integrated support across email, chat, social media, and phone channels.</p>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center gap-2">
+                <i class="pi pi-check-circle text-green-500"></i>
+                <span>Live Chat Support</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="pi pi-check-circle text-green-500"></i>
+                <span>Email Management</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="pi pi-check-circle text-green-500"></i>
+                <span>Social Media Monitoring</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 md:py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Ready to Enhance Your Customer Experience?</h2>
+          <p class="text-blue-200 mb-8 md:mb-12 max-w-2xl mx-auto">
+            Let us handle your customer interactions while you focus on growing your business.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <app-cta-button 
+              label="Request a Quote" 
+              variant="secondary" 
+              icon="pi pi-file"
+              routerLink="/admissions">
+            </app-cta-button>
+            <app-cta-button 
+              label="Schedule Demo" 
+              variant="outline" 
+              icon="pi pi-play">
+            </app-cta-button>
+          </div>
+        </div>
+      </div>
+    </section>
