@@ -145,7 +145,6 @@
         </app-section-header>
         
         <div class="max-w-6xl mx-auto">
-          <!-- Mobile Timeline (Vertical Cards) -->
           <div class="lg:hidden space-y-6">
             <div *ngFor="let milestone of milestones" class="bg-white rounded-xl shadow-md p-6">
               <div class="flex items-center gap-4 mb-4">
@@ -161,7 +160,6 @@
             </div>
           </div>
           
-          <!-- Desktop Timeline -->
           <div class="hidden lg:block">
             <p-timeline [value]="milestones" align="alternate">
               <ng-template pTemplate="content" let-milestone>
@@ -238,7 +236,7 @@
     </section>
 
     <!-- Accreditation & Partnerships -->
-    <section class="py-12 md:py-16 lg:py-20 bg-white">
+    <!-- <section class="py-12 md:py-16 lg:py-20 bg-white">
       <div class="container mx-auto px-4">
         <app-section-header
           title="Accreditation & Partnerships"
@@ -280,7 +278,6 @@
           </div>
         </div>
         
-        <!-- Partner Logos (Placeholder) -->
         <div class="mt-8 md:mt-12">
           <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8">
             <div *ngFor="let i of [1,2,3,4,5,6]" 
@@ -293,7 +290,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Call to Action -->
     <section class="py-12 md:py-16 lg:py-20 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
@@ -350,7 +347,7 @@
               </app-cta-button>
               <a href="tel:+1234567890" class="flex items-center justify-center gap-2 text-blue-300 hover:text-white mt-3 sm:mt-0">
                 <i class="pi pi-phone"></i>
-                <span class="font-semibold">+1 (234) 567-890</span>
+                <span class="font-semibold">+92 308 841 5668</span>
               </a>
             </div>
           </div>

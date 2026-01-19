@@ -25,7 +25,7 @@
         </div>
         <div class="flex justify-between">
           <span class="text-gray-500 text-sm">Price</span>
-          <span class="text-xl font-bold text-blue-600">${{ course.price }}</span>
+          <span class="text-xl font-bold text-blue-600">{{ course.price | currency:'PKR':'symbol':'1.0-0' }}</span>
         </div>
       </div>
       <!-- Add this after the duration/level/price section -->
