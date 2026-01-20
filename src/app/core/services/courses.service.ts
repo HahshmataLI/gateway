@@ -8,19 +8,19 @@ export class CoursesService {
   private allCourses = COURSE_DATA;
 
   getAllCourses(): Course[] {
-    return this.allCourses;
+    return [...this.allCourses]; // Return copy
   }
 
   getCoursesByCategory(category: string): Course[] {
     if (!category || category === 'all') {
-      return this.allCourses;
+      return [...this.allCourses];
     }
     return this.allCourses.filter(course => course.category === category);
   }
 
   searchCourses(query: string): Course[] {
     if (!query.trim()) {
-      return this.allCourses;
+      return [...this.allCourses];
     }
     const searchTerm = query.toLowerCase();
     return this.allCourses.filter(course =>
@@ -35,13 +35,13 @@ export class CoursesService {
   }
 
   getCategories(): string[] {
-    const categories = this.allCourses.map(course => course.category);
-    return ['All', ...Array.from(new Set(categories))];
+    const categories = [...new Set(this.allCourses.map(course => course.category))];
+    return ['All', ...categories];
   }
 
   getLevels(): string[] {
-    const levels = this.allCourses.map(course => course.level);
-    return ['All', ...Array.from(new Set(levels))];
+    const levels = [...new Set(this.allCourses.map(course => course.level))];
+    return ['All', ...levels];
   }
 
   getPriceRanges(): { label: string; min: number; max: number }[] {
@@ -60,8 +60,9 @@ export class CoursesService {
     priceRange?: string;
     search?: string;
   }): Course[] {
-    let filtered = this.allCourses;
+    let filtered = [...this.allCourses];
 
+    // Apply filters in optimal order
     if (filters.search) {
       filtered = this.searchCourses(filters.search);
     }
@@ -96,8 +97,8 @@ export class CoursesService {
         return sorted.sort((a, b) => b.price - a.price);
       case 'duration':
         return sorted.sort((a, b) => {
-          const aDuration = parseInt(a.duration);
-          const bDuration = parseInt(b.duration);
+          const aDuration = parseInt(a.duration) || 0;
+          const bDuration = parseInt(b.duration) || 0;
           return aDuration - bDuration;
         });
       case 'name':

@@ -15,8 +15,8 @@ export interface Course {
 export const COURSE_DATA: Course[] = [
   {
     id: 1,
-    title: 'Digital Marketing Mastery',
-    description: 'Complete digital marketing course covering SEO, SEM, social media marketing, and analytics. Learn to create effective digital campaigns.',
+    title: 'Digital Marketing',
+    description: 'Learn how to promote businesses online and increase sales through effective marketing strategies. This course focuses on practical skills including social media marketing, paid advertising, and tracking results. Ideal for beginners and anyone who wants to build a career in digital marketing.',
     duration: '8 Weeks',
     price: 499,
     category: 'Digital Marketing',
@@ -82,17 +82,17 @@ export const COURSE_DATA: Course[] = [
     features: ['Facebook Ads', 'Instagram Marketing', 'Content Calendar', 'Analytics', 'Community Management'],
     tags: ['Social Media', 'Facebook', 'Instagram', 'Marketing']
   },
-  {
-    id: 7,
-    title: 'Shopify Plus for Enterprises',
-    description: 'Advanced Shopify Plus training for large-scale e-commerce businesses. APIs, automation, and scalability.',
-    duration: '8 Weeks',
-    price: 599,
-    category: 'Shopify',
-    level: 'Advanced',
-    features: ['Shopify Plus', 'API Integration', 'Automation', 'Scalability', 'Multi-channel'],
-    tags: ['Shopify Plus', 'Enterprise', 'API']
-  },
+  // {
+  //   id: 7,
+  //   title: 'Shopify Plus for Enterprises',
+  //   description: 'Advanced Shopify Plus training for large-scale e-commerce businesses. APIs, automation, and scalability.',
+  //   duration: '8 Weeks',
+  //   price: 599,
+  //   category: 'Shopify',
+  //   level: 'Advanced',
+  //   features: ['Shopify Plus', 'API Integration', 'Automation', 'Scalability', 'Multi-channel'],
+  //   tags: ['Shopify Plus', 'Enterprise', 'API']
+  // },
   {
     id: 8,
     title: 'Angular Developer Bootcamp',

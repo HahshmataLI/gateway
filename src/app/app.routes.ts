@@ -22,11 +22,11 @@ export const routes: Routes = [
     loadComponent: () => import('./features/admissions/admissions').then(m => m.Admissions),
     data: { title: 'Admissions & Contact' }
   },
-  {
-    path: 'call-center-services',
-    loadComponent: () => import('./features/call-center/call-center').then(m => m.CallCenter),
-    data: { title: 'Call Center Services' }
-  },
+  // {
+  //   path: 'call-center-services',
+  //   loadComponent: () => import('./features/call-center/call-center').then(m => m.CallCenter),
+  //   data: { title: 'Call Center Services' }
+  // },
   {
     path: '**',
     redirectTo: '',

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { debounceTime, distinctUntilChanged, Subject, Subscription } from 'rxjs';
 import { Course } from '../../shared/models/course';
 import { CoursesService } from '../../core/services/courses.service';
@@ -26,14 +26,13 @@ import { CardModule } from 'primeng/card';
     CardModule,
     SelectButtonModule,
     ProgressSpinnerModule,
-    SectionHeader,
     CourseCard,
     CtaButton
-  ],
+],
   templateUrl: './courses.html',
   styleUrl: './courses.css',
 })
-export class Courses implements OnInit, OnDestroy {
+export class Courses  implements OnInit, OnDestroy {
   allCourses: Course[] = [];
   filteredCourses: Course[] = [];
   isLoading = false;
@@ -51,17 +50,22 @@ export class Courses implements OnInit, OnDestroy {
   priceRanges: { label: string; min: number; max: number }[] = [];
   
   sortOptions = [
-    { label: 'Recommended', value: 'default' },
-    { label: 'Price: Low to High', value: 'price-low' },
-    { label: 'Price: High to Low', value: 'price-high' },
-    { label: 'Duration', value: 'duration' },
-    { label: 'Name (A-Z)', value: 'name' }
+    { label: 'Recommended', value: 'default', icon: 'pi pi-star' },
+    { label: 'Price: Low to High', value: 'price-low', icon: 'pi pi-sort-amount-up' },
+    { label: 'Price: High to Low', value: 'price-high', icon: 'pi pi-sort-amount-down' },
+    { label: 'Duration', value: 'duration', icon: 'pi pi-clock' },
+    { label: 'Name (A-Z)', value: 'name', icon: 'pi pi-sort-alpha-down' }
   ];
+  
+  skeletonItems = Array(6).fill(0);
   
   private searchSubject = new Subject<string>();
   private searchSubscription?: Subscription;
   
-  constructor(private coursesService: CoursesService) {}
+  constructor(
+    private coursesService: CoursesService,
+    private cdr: ChangeDetectorRef
+  ) {}
   
   ngOnInit() {
     this.initializeData();
@@ -75,7 +79,6 @@ export class Courses implements OnInit, OnDestroy {
   private initializeData() {
     this.isLoading = true;
     
-    // Simulate API call delay
     setTimeout(() => {
       this.allCourses = this.coursesService.getAllCourses();
       this.filteredCourses = [...this.allCourses];
@@ -85,13 +88,14 @@ export class Courses implements OnInit, OnDestroy {
       this.priceRanges = this.coursesService.getPriceRanges();
       
       this.isLoading = false;
-    }, 300);
+      this.cdr.markForCheck();
+    }, 0);
   }
   
   private setupSearchDebounce() {
     this.searchSubscription = this.searchSubject
       .pipe(
-        debounceTime(300),
+        debounceTime(200),
         distinctUntilChanged()
       )
       .subscribe(() => {
@@ -100,6 +104,7 @@ export class Courses implements OnInit, OnDestroy {
   }
   
   onSearchChange(query: string) {
+    this.searchQuery = query;
     this.searchSubject.next(query);
   }
   
@@ -118,14 +123,17 @@ export class Courses implements OnInit, OnDestroy {
     this.applyFilters();
   }
   
-  onSortChange() {
+  onSortChange(sortValue?: string) {
+    if (sortValue) {
+      this.selectedSort = sortValue;
+    }
     this.applyFilters();
   }
   
   applyFilters() {
     this.isLoading = true;
+    this.cdr.markForCheck();
     
-    // Simulate filter delay
     setTimeout(() => {
       let filtered = this.coursesService.filterCourses({
         category: this.selectedCategory !== 'All' ? this.selectedCategory : undefined,
@@ -134,14 +142,14 @@ export class Courses implements OnInit, OnDestroy {
         search: this.searchQuery
       });
       
-      // Apply sorting
       if (this.selectedSort !== 'default') {
         filtered = this.coursesService.sortCourses(filtered, this.selectedSort);
       }
       
       this.filteredCourses = filtered;
       this.isLoading = false;
-    }, 200);
+      this.cdr.markForCheck();
+    }, 50);
   }
   
   clearFilters() {
@@ -154,9 +162,7 @@ export class Courses implements OnInit, OnDestroy {
   }
   
   loadMoreCourses() {
-    // In a real app, this would load more courses from an API
-    // For now, we'll just show all courses
-    this.filteredCourses = [...this.allCourses];
+    console.log('Load more courses');
   }
   
   get activeFiltersCount(): number {
@@ -174,35 +180,42 @@ export class Courses implements OnInit, OnDestroy {
   }
   
   getCategoryButtonClass(category: string): string {
-    const baseClasses = 'w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 flex justify-between items-center';
+    const baseClasses = 'w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex justify-between items-center hover:scale-[1.02] active:scale-[0.98]';
     return this.selectedCategory === category
-      ? `${baseClasses} bg-blue-600 text-white`
-      : `${baseClasses} bg-gray-100 hover:bg-gray-200 text-gray-800`;
+      ? `${baseClasses} bg-blue-600 text-white shadow-md`
+      : `${baseClasses} bg-gray-50 hover:bg-gray-100 text-gray-800 border border-gray-200`;
   }
   
   getLevelButtonClass(level: string): string {
-    const baseClasses = 'w-full text-left px-4 py-3 rounded-lg transition-colors duration-200';
+    const baseClasses = 'w-full text-left px-4 py-3 rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]';
     return this.selectedLevel === level
-      ? `${baseClasses} bg-purple-600 text-white`
-      : `${baseClasses} bg-gray-100 hover:bg-gray-200 text-gray-800`;
+      ? `${baseClasses} bg-purple-600 text-white shadow-md`
+      : `${baseClasses} bg-gray-50 hover:bg-gray-100 text-gray-800 border border-gray-200`;
   }
   
   getPriceRangeButtonClass(range: string): string {
-    const baseClasses = 'w-full text-left px-4 py-3 rounded-lg transition-colors duration-200';
+    const baseClasses = 'w-full text-left px-4 py-3 rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]';
     return this.selectedPriceRange === range
-      ? `${baseClasses} bg-green-600 text-white`
-      : `${baseClasses} bg-gray-100 hover:bg-gray-200 text-gray-800`;
+      ? `${baseClasses} bg-green-600 text-white shadow-md`
+      : `${baseClasses} bg-gray-50 hover:bg-gray-100 text-gray-800 border border-gray-200`;
+  }
+  
+  getSortButtonClass(sortValue: string): string {
+    const baseClasses = 'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 border hover:shadow-sm';
+    return this.selectedSort === sortValue
+      ? `${baseClasses} bg-blue-600 text-white border-blue-600 shadow-sm`
+      : `${baseClasses} bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400`;
   }
   
   getCategoryColor(category: string): string {
     const colors: { [key: string]: string } = {
-      'Digital Marketing': 'bg-blue-500',
-      'Shopify': 'bg-purple-500',
-      'Web Development': 'bg-green-500',
-      'SEO': 'bg-orange-500',
-      'Freelancing': 'bg-pink-500'
+      'Digital Marketing': 'bg-gradient-to-br from-blue-500 to-blue-600',
+      'Shopify': 'bg-gradient-to-br from-purple-500 to-purple-600',
+      'Web Development': 'bg-gradient-to-br from-green-500 to-green-600',
+      'SEO': 'bg-gradient-to-br from-orange-500 to-orange-600',
+      'Freelancing': 'bg-gradient-to-br from-pink-500 to-pink-600'
     };
-    return colors[category] || 'bg-gray-500';
+    return colors[category] || 'bg-gradient-to-br from-gray-500 to-gray-600';
   }
   
   getCategoryIcon(category: string): string {
@@ -214,5 +227,9 @@ export class Courses implements OnInit, OnDestroy {
       'Freelancing': 'pi pi-briefcase'
     };
     return icons[category] || 'pi pi-book';
+  }
+  
+  trackByCourseId(index: number, course: Course): number {
+    return course.id;
   }
 }
